@@ -86,5 +86,6 @@ class CustomerTest extends BaseModelTest
 }
 JSON;
         $model = Customer::createFromArray(json_decode($json, true));
+        $this->assertEquals('Halltorpsgatan', $model->getAddress1());
     }
 }

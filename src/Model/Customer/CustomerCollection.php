@@ -6,12 +6,16 @@ namespace FAPI\Fortnox\Model\Customer;
 
 use FAPI\Fortnox\Model\CreatableFromArray;
 
-class CustomerCollection implements CreatableFromArray
+final class CustomerCollection implements CreatableFromArray
 {
     /**
      * @var Customer[]
      */
     private $customers = [];
+
+    /**
+     * @var array
+     */
     private $meta = [];
 
     private function __construct()
@@ -38,9 +42,6 @@ class CustomerCollection implements CreatableFromArray
         return $this->customers;
     }
 
-    /**
-     * @return array
-     */
     public function getMeta(): array
     {
         return $this->meta;
