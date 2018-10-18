@@ -1,7 +1,7 @@
 # FriendsOfApi Fortnox
 
 [![Latest Version](https://img.shields.io/github/release/FriendsOfApi/fortnox.svg?style=flat-square)](https://github.com/FriendsOfApi/fortnox/releases)
-[![Build Status](https://img.shields.io/travis/FriendsOfApi/fortnox.svg?style=flat-square)](https://travis-ci.org/FriendsOfApi/fortnox)
+[![Build Status](https://img.shields.io/travis/FriendsOfApi/fortnox/master.svg?style=flat-square)](https://travis-ci.org/FriendsOfApi/fortnox)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/FriendsOfApi/fortnox.svg?style=flat-square)](https://scrutinizer-ci.com/g/FriendsOfApi/fortnox)
 [![Quality Score](https://img.shields.io/scrutinizer/g/FriendsOfApi/fortnox.svg?style=flat-square)](https://scrutinizer-ci.com/g/FriendsOfApi/fortnox)
 [![Total Downloads](https://img.shields.io/packagist/dt/friendsofapi/fortnox.svg?style=flat-square)](https://packagist.org/packages/friendsofapi/fortnox)

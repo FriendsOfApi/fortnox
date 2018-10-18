@@ -6,15 +6,16 @@ namespace FAPI\Fortnox\Api;
 
 use FAPI\Fortnox\Model\ApiResponse;
 use FAPI\Fortnox\Model\Customer\CustomerCollection;
+use FAPI\Fortnox\Model\Invoice\InvoiceCollection;
+use FAPI\Fortnox\Model\Invoice\Invoice as Model;
 use Psr\Http\Message\ResponseInterface;
-use FAPI\Fortnox\Model\Customer\Customer as Model;
 
 /**
- * {@link https://developer.fortnox.se/documentation/resources/customers/}
+ * {@link https://developer.fortnox.se/documentation/resources/invoices/}
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-class Customer extends HttpApi
+class Invoice extends HttpApi
 {
     /**
      * @throws \FAPI\Fortnox\Exception\DomainException
@@ -22,7 +23,7 @@ class Customer extends HttpApi
      */
     public function all(array $params = [])
     {
-        $response = $this->httpGet('/3/customers?'.http_build_query($params));
+        $response = $this->httpGet('/3/invoices?'.http_build_query($params));
 
         if (!$this->hydrator) {
             return $response;
@@ -33,16 +34,16 @@ class Customer extends HttpApi
             $this->handleErrors($response);
         }
 
-        return $this->hydrator->hydrate($response, CustomerCollection::class);
+        return $this->hydrator->hydrate($response, InvoiceCollection::class);
     }
 
     /**
      * @throws \FAPI\Fortnox\Exception\DomainException
      * @return ResponseInterface|Model
      */
-    public function get(int $customer)
+    public function get(int $invoice)
     {
-        $response = $this->httpGet('/3/customers/'.$customer);
+        $response = $this->httpGet('/3/invoices/'.$invoice);
 
         if (!$this->hydrator) {
             return $response;
@@ -62,7 +63,7 @@ class Customer extends HttpApi
      */
     public function create(array $data)
     {
-        $response = $this->httpPost('/3/customers', ['Customer'=>$data]);
+        $response = $this->httpPost('/3/invoices', ['Invoice'=>$data]);
 
         if (!$this->hydrator) {
             return $response;
@@ -80,9 +81,9 @@ class Customer extends HttpApi
      * @throws \FAPI\Fortnox\Exception\DomainException
      * @return ResponseInterface|Model
      */
-    public function update(int $customer, array $data)
+    public function update(int $invoice, array $data)
     {
-        $response = $this->httpPut('/3/customers/'.$customer, ['Customer'=>$data]);
+        $response = $this->httpPut('/3/invoices/'.$invoice, ['Invoice'=>$data]);
 
         if (!$this->hydrator) {
             return $response;
@@ -94,26 +95,5 @@ class Customer extends HttpApi
         }
 
         return $this->hydrator->hydrate($response, Model::class);
-    }
-
-
-    /**
-     * @throws \FAPI\Fortnox\Exception\DomainException
-     * @return ResponseInterface|ApiResponse
-     */
-    public function delete(int $customer)
-    {
-        $response = $this->httpDelete('/3/customers/'.$customer);
-
-        if (!$this->hydrator) {
-            return $response;
-        }
-
-        // Use any valid status code here
-        if ($response->getStatusCode() !== 204) {
-            $this->handleErrors($response);
-        }
-
-        return $this->hydrator->hydrate($response, ApiResponse::class);
     }
 }
