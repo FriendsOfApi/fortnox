@@ -157,8 +157,20 @@ abstract class HttpApi
     protected function handleErrors(ResponseInterface $response)
     {
         switch ($response->getStatusCode()) {
+            case 400:
+                throw new DomainExceptions\BadRequestException();
+                break;
+
+            case 403:
+                throw new DomainExceptions\ForbiddenException();
+                break;
+
             case 404:
                 throw new DomainExceptions\NotFoundException();
+                break;
+
+            case 500:
+                throw new DomainExceptions\ServerErrorException();
                 break;
 
             default:

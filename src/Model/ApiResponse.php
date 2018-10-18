@@ -13,6 +13,6 @@ class ApiResponse implements CreatableFromArray
 {
     public static function createFromArray(array $data)
     {
-        $x = 2;
+        return new self();
     }
 }

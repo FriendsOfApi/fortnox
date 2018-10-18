@@ -10,8 +10,10 @@ namespace FAPI\Fortnox\Exception\Domain;
 use FAPI\Fortnox\Exception\DomainException;
 
 /**
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ *
+ *
+ * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-final class ValidationException extends \Exception implements DomainException
+final class ForbiddenException extends \Exception implements DomainException
 {
 }
