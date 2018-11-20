@@ -40,7 +40,7 @@ class Customer extends HttpApi
      * @throws \FAPI\Fortnox\Exception\DomainException
      * @return ResponseInterface|Model
      */
-    public function get(int $customer)
+    public function get(string $customer)
     {
         $response = $this->httpGet('/3/customers/'.$customer);
 
@@ -80,7 +80,7 @@ class Customer extends HttpApi
      * @throws \FAPI\Fortnox\Exception\DomainException
      * @return ResponseInterface|Model
      */
-    public function update(int $customer, array $data)
+    public function update(string $customer, array $data)
     {
         $response = $this->httpPut('/3/customers/'.$customer, ['Customer'=>$data]);
 
@@ -101,7 +101,7 @@ class Customer extends HttpApi
      * @throws \FAPI\Fortnox\Exception\DomainException
      * @return ResponseInterface|ApiResponse
      */
-    public function delete(int $customer)
+    public function delete(string $customer)
     {
         $response = $this->httpDelete('/3/customers/'.$customer);
 
