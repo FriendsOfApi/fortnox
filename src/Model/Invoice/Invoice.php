@@ -8,171 +8,171 @@ use FAPI\Fortnox\Model\CreatableFromArray;
 
 class Invoice implements CreatableFromArray
 {
-    /** @var string|null */
+    /** @var null|string */
     private $url;
-    /** @var string|null */
+    /** @var null|string */
     private $urlTaxReductionList;
-    /** @var string|null */
+    /** @var null|string */
     private $address1;
-    /** @var string|null */
+    /** @var null|string */
     private $address2;
-    /** @var integer|null */
+    /** @var null|int */
     private $administrationFee;
-    /** @var integer|null */
+    /** @var null|int */
     private $administrationFeeVat;
-    /** @var integer|null */
+    /** @var null|int */
     private $balance;
-    /** @var integer|null */
+    /** @var null|int */
     private $basisTaxReduction;
     /** @var bool */
     private $booked;
     /** @var bool */
     private $cancelled;
-    /** @var string|null */
+    /** @var null|string */
     private $city;
-    /** @var string|null */
+    /** @var null|string */
     private $comments;
-    /** @var integer|null */
+    /** @var null|int */
     private $contractReference;
-    /** @var float|null */
+    /** @var null|float */
     private $contributionPercent;
-    /** @var integer|null */
+    /** @var null|int */
     private $contributionValue;
-    /** @var string|null */
+    /** @var null|string */
     private $costCenter;
-    /** @var string|null */
+    /** @var null|string */
     private $country;
     /**
-     * @var string|null It looks like this is a boolean in a string.. "false".
+     * @var null|string It looks like this is a boolean in a string.. "false".
      */
     private $credit;
-    /** @var string|null */
+    /** @var null|string */
     private $creditInvoiceReference;
-    /** @var string|null */
+    /** @var null|string */
     private $currency;
-    /** @var integer|null */
+    /** @var null|int */
     private $currencyRate;
-    /** @var integer|null */
+    /** @var null|int */
     private $currencyUnit;
-    /** @var string|null */
+    /** @var null|string */
     private $customerName;
-    /** @var string|null */
+    /** @var null|string */
     private $customerNumber;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryAddress1;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryAddress2;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryCity;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryCountry;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryDate;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryName;
-    /** @var string|null */
+    /** @var null|string */
     private $deliveryZipCode;
-    /** @var string|null */
+    /** @var null|string */
     private $documentNumber;
-    /** @var string|null */
+    /** @var null|string */
     private $dueDate;
     /** @var array */
     private $ediInformation;
-    /** @var string|null */
+    /** @var null|string */
     private $euQuarterlyReport;
     /** @var array */
     private $emailInformation;
-    /** @var string|null */
+    /** @var null|string */
     private $externalInvoiceReference1;
-    /** @var string|null */
+    /** @var null|string */
     private $externalInvoiceReference2;
-    /** @var integer|null */
+    /** @var null|int */
     private $freight;
-    /** @var float|null */
+    /** @var null|float */
     private $freightVat;
-    /** @var integer|null */
+    /** @var null|int */
     private $gross;
     /** @var bool */
     private $houseWork;
-    /** @var string|null */
+    /** @var null|string */
     private $invoiceDate;
-    /** @var string|null */
+    /** @var null|string */
     private $invoicePeriodEnd;
-    /** @var string|null */
+    /** @var null|string */
     private $invoicePeriodStart;
-    /** @var string|null */
+    /** @var null|string */
     private $invoiceReference;
     /** @var array */
     private $InvoiceRows;
-    /** @var string|null */
+    /** @var null|string */
     private $invoiceType;
     /** @var array */
     private $labels;
-    /** @var string|null */
+    /** @var null|string */
     private $language;
-    /** @var string|null */
+    /** @var null|string */
     private $lastRemindDate;
-    /** @var string|null */
+    /** @var null|string */
     private $net;
-    /** @var boolean|null */
+    /** @var null|bool */
     private $notCompleted;
-    /** @var string|null */
+    /** @var null|string */
     private $ocr;
-    /** @var string|null */
+    /** @var null|string */
     private $offerReference;
-    /** @var string|null */
+    /** @var null|string */
     private $orderReference;
-    /** @var string|null */
+    /** @var null|string */
     private $organisationNumber;
-    /** @var string|null */
+    /** @var null|string */
     private $ourReference;
-    /** @var string|null */
+    /** @var null|string */
     private $paymentWay;
-    /** @var string|null */
+    /** @var null|string */
     private $phone1;
-    /** @var string|null */
+    /** @var null|string */
     private $phone2;
-    /** @var string|null */
+    /** @var null|string */
     private $priceList;
-    /** @var string|null */
+    /** @var null|string */
     private $printTemplate;
-    /** @var string|null */
+    /** @var null|string */
     private $project;
-    /** @var string|null */
+    /** @var null|string */
     private $remarks;
-    /** @var string|null */
+    /** @var null|string */
     private $reminders;
-    /** @var string|null */
+    /** @var null|string */
     private $roundOff;
-    /** @var boolean */
+    /** @var bool */
     private $sent;
-    /** @var string|null */
+    /** @var null|string */
     private $taxReduction;
-    /** @var string|null */
+    /** @var null|string */
     private $termsOfDelivery;
-    /** @var string|null */
+    /** @var null|string */
     private $termsOfPayment;
-    /** @var integer|null */
+    /** @var null|int */
     private $total;
-    /** @var integer|null */
+    /** @var null|int */
     private $totalToPay;
-    /** @var float|null */
+    /** @var null|float */
     private $totalVat;
-    /** @var boolean|null */
+    /** @var null|bool */
     private $vatIncluded;
-    /** @var string|null */
+    /** @var null|string */
     private $voucherNumber;
-    /** @var string|null */
+    /** @var null|string */
     private $voucherSeries;
-    /** @var string|null */
+    /** @var null|string */
     private $voucherYear;
-    /** @var string|null */
+    /** @var null|string */
     private $wayOfDelivery;
-    /** @var string|null */
+    /** @var null|string */
     private $yourOrderNumber;
-    /** @var string|null */
+    /** @var null|string */
     private $yourReference;
-    /** @var string|null */
+    /** @var null|string */
     private $zipCode;
 
     private function __construct()
@@ -182,7 +182,7 @@ class Invoice implements CreatableFromArray
     public static function createFromArray(array $data)
     {
         $model = new self();
-        $data = isset($data['Invoice']) ? $data['Invoice']: $data;
+        $data = $data['Invoice'] ?? $data;
 
         $model->url = $data['@url'] ?? null;
         $model->urlTaxReductionList = $data['@urlTaxReductionList'] ?? null;
@@ -435,9 +435,6 @@ class Invoice implements CreatableFromArray
         return new \DateTime($this->dueDate);
     }
 
-    /**
-     * @return array
-     */
     public function getEdiInformation(): array
     {
         return $this->ediInformation;
@@ -448,9 +445,6 @@ class Invoice implements CreatableFromArray
         return $this->euQuarterlyReport;
     }
 
-    /**
-     * @return array
-     */
     public function getEmailInformation(): array
     {
         return $this->emailInformation;
@@ -506,9 +500,6 @@ class Invoice implements CreatableFromArray
         return $this->invoiceReference;
     }
 
-    /**
-     * @return array
-     */
     public function getInvoiceRows(): array
     {
         return $this->InvoiceRows;
@@ -519,9 +510,6 @@ class Invoice implements CreatableFromArray
         return $this->invoiceType;
     }
 
-    /**
-     * @return array
-     */
     public function getLabels(): array
     {
         return $this->labels;

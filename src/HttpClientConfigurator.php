@@ -9,20 +9,19 @@ declare(strict_types=1);
 
 namespace FAPI\Fortnox;
 
-use Http\Client\HttpClient;
+use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
+use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\UriFactoryDiscovery;
-use Http\Message\Authentication;
 use Http\Message\UriFactory;
-use Http\Client\Common\Plugin;
 
 /**
  * Configure an HTTP client.
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  *
- * @internal This class should not be used outside of the API Client, it is not part of the BC promise.
+ * @internal this class should not be used outside of the API Client, it is not part of the BC promise
  */
 final class HttpClientConfigurator
 {
@@ -36,12 +35,10 @@ final class HttpClientConfigurator
      */
     private $clientId;
 
-
     /**
      * @var string
      */
     private $clientSecret;
-
 
     /**
      * @var string
@@ -68,19 +65,12 @@ final class HttpClientConfigurator
      */
     private $appendPlugins = [];
 
-    /**
-     * @param HttpClient|null $httpClient
-     * @param UriFactory|null $uriFactory
-     */
     public function __construct(HttpClient $httpClient = null, UriFactory $uriFactory = null)
     {
         $this->httpClient = $httpClient ?? HttpClientDiscovery::find();
         $this->uriFactory = $uriFactory ?? UriFactoryDiscovery::find();
     }
 
-    /**
-     * @return HttpClient
-     */
     public function createConfiguredClient(): HttpClient
     {
         $plugins = $this->prependPlugins;
@@ -92,63 +82,53 @@ final class HttpClientConfigurator
 
         $extraHeaders = [];
         if (null !== $this->clientId) {
-            $extraHeaders['Client-Id']= $this->clientId;
+            $extraHeaders['Client-Id'] = $this->clientId;
         }
 
         if (null !== $this->clientSecret) {
-            $extraHeaders['Client-Secret']= $this->clientSecret;
+            $extraHeaders['Client-Secret'] = $this->clientSecret;
         }
 
         if (null !== $this->accessToken) {
-            $extraHeaders['Access-Token']= $this->accessToken;
+            $extraHeaders['Access-Token'] = $this->accessToken;
         }
 
         if (!empty($extraHeaders)) {
             $plugins[] = new Plugin\HeaderDefaultsPlugin($extraHeaders);
         }
 
-        return new PluginClient($this->httpClient, array_merge($plugins, $this->appendPlugins));
+        return new PluginClient($this->httpClient, \array_merge($plugins, $this->appendPlugins));
     }
 
-    /**
-     * @param string $endpoint
-     *
-     * @return HttpClientConfigurator
-     */
-    public function setEndpoint(string $endpoint): HttpClientConfigurator
+    public function setEndpoint(string $endpoint): self
     {
         $this->endpoint = $endpoint;
 
         return $this;
     }
 
-    public function setClientId(string $clientId): HttpClientConfigurator
+    public function setClientId(string $clientId): self
     {
         $this->clientId = $clientId;
 
         return $this;
     }
 
-    public function setClientSecret(string $clientSecret): HttpClientConfigurator
+    public function setClientSecret(string $clientSecret): self
     {
         $this->clientSecret = $clientSecret;
 
         return $this;
     }
 
-    public function setAccessToken(string $accessToken): HttpClientConfigurator
+    public function setAccessToken(string $accessToken): self
     {
         $this->accessToken = $accessToken;
 
         return $this;
     }
 
-    /**
-     * @param Plugin $plugin
-     *
-     * @return HttpClientConfigurator
-     */
-    public function appendPlugin(Plugin ...$plugin): HttpClientConfigurator
+    public function appendPlugin(Plugin ...$plugin): self
     {
         foreach ($plugin as $p) {
             $this->appendPlugins[] = $p;
@@ -157,16 +137,11 @@ final class HttpClientConfigurator
         return $this;
     }
 
-    /**
-     * @param Plugin $plugin
-     *
-     * @return HttpClientConfigurator
-     */
-    public function prependPlugin(Plugin ...$plugin): HttpClientConfigurator
+    public function prependPlugin(Plugin ...$plugin): self
     {
-        $plugin = array_reverse($plugin);
+        $plugin = \array_reverse($plugin);
         foreach ($plugin as $p) {
-            array_unshift($this->prependPlugins, $p);
+            \array_unshift($this->prependPlugins, $p);
         }
 
         return $this;

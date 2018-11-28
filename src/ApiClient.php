@@ -10,10 +10,9 @@ declare(strict_types=1);
 namespace FAPI\Fortnox;
 
 use FAPI\Fortnox\Api\Customer;
-use FAPI\Fortnox\Api\Stat;
-use FAPI\Fortnox\Api\Tweet;
-use FAPI\Fortnox\Hydrator\ModelHydrator;
+use FAPI\Fortnox\Api\Invoice;
 use FAPI\Fortnox\Hydrator\Hydrator;
+use FAPI\Fortnox\Hydrator\ModelHydrator;
 use Http\Client\HttpClient;
 
 /**
@@ -39,10 +38,6 @@ final class ApiClient
     /**
      * The constructor accepts already configured HTTP clients.
      * Use the configure method to pass a configuration to the Client and create an HTTP Client.
-     *
-     * @param HttpClient          $httpClient
-     * @param Hydrator|null       $hydrator
-     * @param RequestBuilder|null $requestBuilder
      */
     public function __construct(
         HttpClient $httpClient,
@@ -55,10 +50,6 @@ final class ApiClient
     }
 
     /**
-     * @param HttpClientConfigurator $httpClientConfigurator
-     * @param Hydrator|null          $hydrator
-     * @param RequestBuilder|null    $requestBuilder
-     *
      * @return ApiClient
      */
     public static function configure(
@@ -71,7 +62,7 @@ final class ApiClient
         return new self($httpClient, $hydrator, $requestBuilder);
     }
 
-    public static function create(string $clientSecret, string $accessToken): ApiClient
+    public static function create(string $clientSecret, string $accessToken): self
     {
         $httpClientConfigurator = (new HttpClientConfigurator())
             ->setClientSecret($clientSecret)
@@ -83,5 +74,10 @@ final class ApiClient
     public function customer(): Customer
     {
         return new Api\Customer($this->httpClient, $this->hydrator, $this->requestBuilder);
+    }
+
+    public function invoice(): Invoice
+    {
+        return new Api\Invoice($this->httpClient, $this->hydrator, $this->requestBuilder);
     }
 }

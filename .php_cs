@@ -1,13 +1,9 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__.'/src);
-
-$config = PhpCsFixer\Config::create()
-    ->setRiskyAllowed(true)
+return PhpCsFixer\Config::create()
     ->setRules([
         '@Symfony' => true,
     ])
-    ->setFinder($finder);
-
-return $config;
+    ->setRiskyAllowed(true)
+    ->setFinder(PhpCsFixer\Finder::create()->in(__DIR__.'/src'))
+;

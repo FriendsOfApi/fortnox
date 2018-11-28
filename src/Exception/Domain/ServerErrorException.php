@@ -10,8 +10,6 @@ namespace FAPI\Fortnox\Exception\Domain;
 use FAPI\Fortnox\Exception\DomainException;
 
 /**
- *
- *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
 final class ServerErrorException extends \Exception implements DomainException
