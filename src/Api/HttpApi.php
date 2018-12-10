@@ -127,9 +127,10 @@ abstract class HttpApi
      */
     protected function handleErrors(ResponseInterface $response)
     {
+        $body = $response->getBody()->__toString();
         switch ($response->getStatusCode()) {
             case 400:
-                throw new DomainExceptions\BadRequestException();
+                throw new DomainExceptions\BadRequestException($body);
                 break;
 
             case 403:
