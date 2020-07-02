@@ -23,7 +23,7 @@ class Customer extends HttpApi
      */
     public function all(array $params = [])
     {
-        $response = $this->httpGet('/3/customers?'.\http_build_query($params));
+        $response = $this->httpGet('/3/customers', $params);
 
         if (!$this->hydrator) {
             return $response;
