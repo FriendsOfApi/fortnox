@@ -156,7 +156,7 @@ abstract class HttpApi
      *
      * @param array $params Request parameters
      *
-     * @return null|string
+     * @return string|null
      */
     private function createJsonBody(array $params)
     {

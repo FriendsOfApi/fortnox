@@ -8,171 +8,171 @@ use FAPI\Fortnox\Model\CreatableFromArray;
 
 class Invoice implements CreatableFromArray
 {
-    /** @var null|string */
+    /** @var string|null */
     private $url;
-    /** @var null|string */
+    /** @var string|null */
     private $urlTaxReductionList;
-    /** @var null|string */
+    /** @var string|null */
     private $address1;
-    /** @var null|string */
+    /** @var string|null */
     private $address2;
-    /** @var null|int */
+    /** @var int|null */
     private $administrationFee;
-    /** @var null|int */
+    /** @var int|null */
     private $administrationFeeVat;
-    /** @var null|int */
+    /** @var int|null */
     private $balance;
-    /** @var null|int */
+    /** @var int|null */
     private $basisTaxReduction;
     /** @var bool */
     private $booked;
     /** @var bool */
     private $cancelled;
-    /** @var null|string */
+    /** @var string|null */
     private $city;
-    /** @var null|string */
+    /** @var string|null */
     private $comments;
-    /** @var null|int */
+    /** @var int|null */
     private $contractReference;
-    /** @var null|float */
+    /** @var float|null */
     private $contributionPercent;
-    /** @var null|int */
+    /** @var int|null */
     private $contributionValue;
-    /** @var null|string */
+    /** @var string|null */
     private $costCenter;
-    /** @var null|string */
+    /** @var string|null */
     private $country;
     /**
-     * @var null|string It looks like this is a boolean in a string.. "false".
+     * @var string|null It looks like this is a boolean in a string.. "false".
      */
     private $credit;
-    /** @var null|string */
+    /** @var string|null */
     private $creditInvoiceReference;
-    /** @var null|string */
+    /** @var string|null */
     private $currency;
-    /** @var null|int */
+    /** @var int|null */
     private $currencyRate;
-    /** @var null|int */
+    /** @var int|null */
     private $currencyUnit;
-    /** @var null|string */
+    /** @var string|null */
     private $customerName;
-    /** @var null|string */
+    /** @var string|null */
     private $customerNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryAddress1;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryAddress2;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryCity;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryCountry;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryDate;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryName;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryZipCode;
-    /** @var null|string */
+    /** @var string|null */
     private $documentNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $dueDate;
     /** @var array */
     private $ediInformation;
-    /** @var null|string */
+    /** @var string|null */
     private $euQuarterlyReport;
     /** @var array */
     private $emailInformation;
-    /** @var null|string */
+    /** @var string|null */
     private $externalInvoiceReference1;
-    /** @var null|string */
+    /** @var string|null */
     private $externalInvoiceReference2;
-    /** @var null|int */
+    /** @var int|null */
     private $freight;
-    /** @var null|float */
+    /** @var float|null */
     private $freightVat;
-    /** @var null|int */
+    /** @var int|null */
     private $gross;
     /** @var bool */
     private $houseWork;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceDate;
-    /** @var null|string */
+    /** @var string|null */
     private $invoicePeriodEnd;
-    /** @var null|string */
+    /** @var string|null */
     private $invoicePeriodStart;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceReference;
     /** @var array */
     private $InvoiceRows;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceType;
     /** @var array */
     private $labels;
-    /** @var null|string */
+    /** @var string|null */
     private $language;
-    /** @var null|string */
+    /** @var string|null */
     private $lastRemindDate;
-    /** @var null|string */
+    /** @var string|null */
     private $net;
-    /** @var null|bool */
+    /** @var bool|null */
     private $notCompleted;
-    /** @var null|string */
+    /** @var string|null */
     private $ocr;
-    /** @var null|string */
+    /** @var string|null */
     private $offerReference;
-    /** @var null|string */
+    /** @var string|null */
     private $orderReference;
-    /** @var null|string */
+    /** @var string|null */
     private $organisationNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $ourReference;
-    /** @var null|string */
+    /** @var string|null */
     private $paymentWay;
-    /** @var null|string */
+    /** @var string|null */
     private $phone1;
-    /** @var null|string */
+    /** @var string|null */
     private $phone2;
-    /** @var null|string */
+    /** @var string|null */
     private $priceList;
-    /** @var null|string */
+    /** @var string|null */
     private $printTemplate;
-    /** @var null|string */
+    /** @var string|null */
     private $project;
-    /** @var null|string */
+    /** @var string|null */
     private $remarks;
-    /** @var null|string */
+    /** @var string|null */
     private $reminders;
-    /** @var null|string */
+    /** @var string|null */
     private $roundOff;
     /** @var bool */
     private $sent;
-    /** @var null|string */
+    /** @var string|null */
     private $taxReduction;
-    /** @var null|string */
+    /** @var string|null */
     private $termsOfDelivery;
-    /** @var null|string */
+    /** @var string|null */
     private $termsOfPayment;
-    /** @var null|int */
+    /** @var int|null */
     private $total;
-    /** @var null|int */
+    /** @var int|null */
     private $totalToPay;
-    /** @var null|float */
+    /** @var float|null */
     private $totalVat;
-    /** @var null|bool */
+    /** @var bool|null */
     private $vatIncluded;
-    /** @var null|string */
+    /** @var string|null */
     private $voucherNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $voucherSeries;
-    /** @var null|string */
+    /** @var string|null */
     private $voucherYear;
-    /** @var null|string */
+    /** @var string|null */
     private $wayOfDelivery;
-    /** @var null|string */
+    /** @var string|null */
     private $yourOrderNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $yourReference;
-    /** @var null|string */
+    /** @var string|null */
     private $zipCode;
 
     private function __construct()

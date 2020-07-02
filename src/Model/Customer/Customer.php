@@ -8,49 +8,49 @@ use FAPI\Fortnox\Model\CreatableFromArray;
 
 final class Customer implements CreatableFromArray
 {
-    /** @var null|string */
+    /** @var string|null */
     private $url;
-    /** @var null|string */
+    /** @var string|null */
     private $address1;
-    /** @var null|string */
+    /** @var string|null */
     private $address2;
-    /** @var null|string */
+    /** @var string|null */
     private $city;
-    /** @var null|string */
+    /** @var string|null */
     private $comments;
-    /** @var null|string */
+    /** @var string|null */
     private $costCenter;
-    /** @var null|string */
+    /** @var string|null */
     private $country;
-    /** @var null|string */
+    /** @var string|null */
     private $countryCode;
-    /** @var null|string */
+    /** @var string|null */
     private $currency;
-    /** @var null|string */
+    /** @var string|null */
     private $customerNumber;
     /** @var array */
     private $defaultDeliveryTypes;
     /** @var array */
     private $defaultTemplates;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryAddress1;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryAddress2;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryCity;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryCountry;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryCountryCode;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryFax;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryName;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryPhone1;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryPhone2;
-    /** @var null|string */
+    /** @var string|null */
     private $deliveryZipCode;
     /** @var string */
     private $email;
@@ -72,53 +72,53 @@ final class Customer implements CreatableFromArray
     private $emailOrderBCC;
     /** @var string */
     private $emailOrderCC;
-    /** @var null|string */
+    /** @var string|null */
     private $fax;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceAdministrationFee;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceDiscount;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceFreight;
-    /** @var null|string */
+    /** @var string|null */
     private $invoiceRemark;
-    /** @var null|string */
+    /** @var string|null */
     private $name;
     /** @var string */
     private $organisationNumber;
     /** @var string */
     private $ourReference;
-    /** @var null|string */
+    /** @var string|null */
     private $phone1;
-    /** @var null|string */
+    /** @var string|null */
     private $phone2;
-    /** @var null|string */
+    /** @var string|null */
     private $priceList;
-    /** @var null|string */
+    /** @var string|null */
     private $project;
-    /** @var null|string */
+    /** @var string|null */
     private $salesAccount;
-    /** @var null|string */
+    /** @var string|null */
     private $showPriceVATIncluded;
     /** @var string */
     private $termsOfDelivery;
     /** @var string */
     private $termsOfPayment;
-    /** @var null|string */
+    /** @var string|null */
     private $type;
     /** @var string */
     private $vatNumber;
-    /** @var null|string */
+    /** @var string|null */
     private $vatType;
-    /** @var null|string */
+    /** @var string|null */
     private $visitingAddress;
-    /** @var null|string */
+    /** @var string|null */
     private $visitingCity;
-    /** @var null|string */
+    /** @var string|null */
     private $visitingCountry;
-    /** @var null|string */
+    /** @var string|null */
     private $visitingCountryCode;
-    /** @var null|string */
+    /** @var string|null */
     private $visitingZipCode;
     /** @var string */
     private $www;
@@ -126,7 +126,7 @@ final class Customer implements CreatableFromArray
     private $wayOfDelivery;
     /** @var string */
     private $yourReference;
-    /** @var null|string */
+    /** @var string|null */
     private $zipCode;
 
     private function __construct()
