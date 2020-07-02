@@ -23,7 +23,9 @@ class Invoice extends HttpApi
      */
     public function all(array $params = [])
     {
-        $response = $this->httpGet('/3/invoices?'.\http_build_query($params));
+        $response = $this->httpGet('/3/invoices?'.\http_build_query($params), [], [
+            'Content-Type' => 'application/json',
+        ]);
 
         if (!$this->hydrator) {
             return $response;
@@ -44,7 +46,9 @@ class Invoice extends HttpApi
      */
     public function get(int $invoice)
     {
-        $response = $this->httpGet('/3/invoices/'.$invoice);
+        $response = $this->httpGet('/3/invoices/'.$invoice, [], [
+            'Content-Type' => 'application/json',
+        ]);
 
         if (!$this->hydrator) {
             return $response;
@@ -65,7 +69,9 @@ class Invoice extends HttpApi
      */
     public function create(array $data)
     {
-        $response = $this->httpPost('/3/invoices', ['Invoice' => $data]);
+        $response = $this->httpPost('/3/invoices', ['Invoice' => $data], [
+            'Content-Type' => 'application/json',
+        ]);
 
         if (!$this->hydrator) {
             return $response;
@@ -86,7 +92,9 @@ class Invoice extends HttpApi
      */
     public function update(int $invoice, array $data)
     {
-        $response = $this->httpPut('/3/invoices/'.$invoice, ['Invoice' => $data]);
+        $response = $this->httpPut('/3/invoices/'.$invoice, ['Invoice' => $data], [
+            'Content-Type' => 'application/json',
+        ]);
 
         if (!$this->hydrator) {
             return $response;
