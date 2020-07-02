@@ -58,12 +58,12 @@ final class RequestBuilder
     public function create(string $method, string $uri, array $headers = [], $body = null): RequestInterface
     {
         if (!\is_array($body)) {
-            if (!isset($requestHeaders['Content-Type'])) {
-                $requestHeaders['Content-Type'] = 'application/json';
+            if (!isset($headers['Content-Type'])) {
+                $headers['Content-Type'] = 'application/json';
             }
 
-            if (!isset($requestHeaders['Accept'])) {
-                $requestHeaders['Accept'] = 'application/json';
+            if (!isset($headers['Accept'])) {
+                $headers['Accept'] = 'application/json';
             }
 
             return $this->requestFactory->createRequest($method, $uri, $headers, $body);
