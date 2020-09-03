@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace FAPI\Fortnox\Api;
 
+use FAPI\Fortnox\Model\ApiResponse;
 use FAPI\Fortnox\Model\Customer\CustomerCollection;
 use FAPI\Fortnox\Model\Invoice\Invoice as Model;
 use FAPI\Fortnox\Model\Invoice\InvoiceCollection;
@@ -98,5 +99,26 @@ class Invoice extends HttpApi
         }
 
         return $this->hydrator->hydrate($response, Model::class);
+    }
+
+    /**
+     * @throws \FAPI\Fortnox\Exception\DomainException
+     *
+     * @return ApiResponse|ResponseInterface
+     */
+    public function email(int $invoice)
+    {
+        $response = $this->httpGet(sprintf('/3/invoices/%d/email', $invoice));
+
+        if (!$this->hydrator) {
+            return $response;
+        }
+
+        // Use any valid status code here
+        if (200 !== $response->getStatusCode()) {
+            $this->handleErrors($response);
+        }
+
+        return $this->hydrator->hydrate($response, ApiResponse::class);
     }
 }
