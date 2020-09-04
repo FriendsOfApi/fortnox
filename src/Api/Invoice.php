@@ -121,4 +121,25 @@ class Invoice extends HttpApi
 
         return $this->hydrator->hydrate($response, ApiResponse::class);
     }
+
+    /**
+     * @throws \FAPI\Fortnox\Exception\DomainException
+     *
+     * @return ResponseInterface
+     */
+    public function print(int $invoice)
+    {
+        $response = $this->httpGet(sprintf('/3/invoices/%d/print', $invoice));
+
+        if (!$this->hydrator) {
+            return $response;
+        }
+
+        // Use any valid status code here
+        if (200 !== $response->getStatusCode()) {
+            $this->handleErrors($response);
+        }
+
+        return $response;
+    }
 }
